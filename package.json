@@ -1,0 +1,27 @@
+{
+  "name": "express-crash",
+  "version": "1.0.0",
+  "description": "Simple customer management app",
+  "main": "app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node bin/dev",
+    "dev": "NODE_ENV=development nodemon -w src --exec \"yarn run build && node bin/dev\"",
+    "clean": "rm -rf dist",
+    "build": "yarn run clean && mkdir dist && babel src -s -D -d dist",
+    "production": "yarn run build && node bin/production"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-validator": "^4.3.0",
+    "mongoose": "^4.13.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0"
+  }
+}
